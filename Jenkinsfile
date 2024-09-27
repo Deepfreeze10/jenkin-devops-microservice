@@ -5,7 +5,7 @@ pipeline {
 	// agent { docker { image 'node:13.8'}}
 
 	tools {
-		jdk 'jdk_1.8.0'
+		jdk 'jdk 1.8.0 - java 8'
 	}
 
 	environment {
