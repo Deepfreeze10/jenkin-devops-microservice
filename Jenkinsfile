@@ -4,15 +4,15 @@ pipeline {
 	// agent { docker { image 'maven:3.6.3'}}
 	// agent { docker { image 'node:13.8'}}
 
-	tools {
-		jdk 'jdk 1.8.0 - java 8'
-	}
-
 	environment {
 		dockerHome = tool 'myDocker'
 		mavenHome = tool 'myMaven'
 		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 	}
+
+	agent {
+        docker { image 'openjdk:8-jdk' }
+    }
 
 	stages {
 		stage('Checkout') {
